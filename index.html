@@ -25,6 +25,7 @@ nav { background: #1a1a1a; padding: 0 32px; display: flex; align-items: center; 
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { font-family: 'Inter', sans-serif; font-size: 11px; color: #a0a0a0; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
 .nav-links a:hover { color: #f8f6f2; }
+.nav-links a.active { color: #f8f6f2; }
 
 .hero { background: #1a1a1a; padding: 48px 32px 44px; display: flex; gap: 36px; align-items: center; border-bottom: 1px solid #333; }
 .hero-left { flex: 1; }
@@ -93,6 +94,8 @@ nav { background: #1a1a1a; padding: 0 32px; display: flex; align-items: center; 
 .watch-label { font-size: 10px; color: #999; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
 .watch-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: #1a1a1a; font-weight: 600; margin-bottom: 5px; }
 .watch-note { font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 9px; }
+.anime-img-wrap { background: rgba(26,26,26,0.06); border-radius: 4px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; padding: 8px; min-height: 80px; }
+.anime-img { max-height: 120px; max-width: 100%; object-fit: contain; border-radius: 3px; display: block; }
 
 .contact-row { background: #1a1a1a; border-radius: 6px; padding: 20px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 .contact-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #f8f6f2; font-weight: 500; }
@@ -120,6 +123,7 @@ footer span { font-size: 10px; color: #555; letter-spacing: 0.1em; text-transfor
 
   <nav>
     <a class="nav-logo" href="#">Roni Kayata</a>
+    <!-- TABS: Change the text inside each <a> tag to rename the tab label -->
     <ul class="nav-links">
       <li><a href="#" onclick="switchTab('history')">Work</a></li>
       <li><a href="#" onclick="switchTab('hobbies')">Hobbies</a></li>
@@ -142,11 +146,6 @@ footer span { font-size: 10px; color: #555; letter-spacing: 0.1em; text-transfor
   </div>
 
   <div class="paper">
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab('history')">History</button>
-      <button class="tab-btn" onclick="switchTab('hobbies')">Hobbies</button>
-      <button class="tab-btn" onclick="switchTab('shows')">Shows &amp; Content</button>
-    </div>
 
     <div id="tab-history" class="tab-panel active paper">
       <p class="stamp">Selected work</p>
@@ -301,29 +300,48 @@ footer span { font-size: 10px; color: #555; letter-spacing: 0.1em; text-transfor
       <p class="sec-title">Anime</p>
       <div class="watch-grid">
         <div class="watch-card fav paper-light">
+          <!-- IMAGE: paste a URL between the quotes in src="" -->
+          <div class="anime-img-wrap"><img class="anime-img" src="" alt="Neon Genesis Evangelion" onerror="this.style.display='none'"></div>
           <p class="watch-label">All-time</p>
           <p class="watch-title">Neon Genesis Evangelion</p>
           <p class="watch-note">A series that rewired how I think about storytelling. The production history is as fascinating as the show itself.</p>
           <div class="tag-row"><span class="tag em">Favorite</span><span class="tag">Mecha</span><span class="tag">Psychological</span></div>
         </div>
         <div class="watch-card fav paper-light">
+          <!-- IMAGE: paste a URL between the quotes in src="" -->
+          <div class="anime-img-wrap"><img class="anime-img" src="" alt="Serial Experiments Lain" onerror="this.style.display='none'"></div>
           <p class="watch-label">All-time</p>
           <p class="watch-title">Serial Experiments Lain</p>
           <p class="watch-note">Eerily prescient about the internet and identity. Gets better and stranger with every rewatch.</p>
           <div class="tag-row"><span class="tag em">Favorite</span><span class="tag">Cyberpunk</span><span class="tag">Surreal</span></div>
         </div>
         <div class="watch-card paper-light">
+          <!-- IMAGE: paste a URL between the quotes in src="" -->
+          <div class="anime-img-wrap"><img class="anime-img" src="" alt="Cowboy Bebop" onerror="this.style.display='none'"></div>
           <p class="watch-label">Classic</p>
           <p class="watch-title">Cowboy Bebop</p>
           <p class="watch-note">The one you show people who think they don't like anime. Perfect in almost every way.</p>
           <div class="tag-row"><span class="tag">Sci-fi</span><span class="tag">Jazz</span></div>
         </div>
         <div class="watch-card paper-light">
+          <!-- IMAGE: paste a URL between the quotes in src="" -->
+          <div class="anime-img-wrap"><img class="anime-img" src="" alt="Ghost in the Shell" onerror="this.style.display='none'"></div>
           <p class="watch-label">Classic</p>
           <p class="watch-title">Ghost in the Shell</p>
           <p class="watch-note">The 1995 film and SAC series — questions about consciousness that feel more relevant every year.</p>
           <div class="tag-row"><span class="tag">Cyberpunk</span><span class="tag">Philosophy</span></div>
         </div>
+
+        <!-- ADD ANIME: Copy this block and paste it above this comment to add a new anime card
+        <div class="watch-card paper-light">
+          <div class="anime-img-wrap"><img class="anime-img" src="YOUR_IMAGE_URL_HERE" alt="Anime Title"></div>
+          <p class="watch-label">Label (e.g. Classic / All-time)</p>
+          <p class="watch-title">Anime Title</p>
+          <p class="watch-note">Your notes about the anime.</p>
+          <div class="tag-row"><span class="tag">Tag 1</span><span class="tag">Tag 2</span></div>
+        </div>
+        -->
+
       </div>
       <p class="stamp">Other media</p>
       <p class="sec-title">Games, shows &amp; content</p>
@@ -369,10 +387,10 @@ footer span { font-size: 10px; color: #555; letter-spacing: 0.1em; text-transfor
 <script>
 function switchTab(tab) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.nav-links a[onclick]').forEach(a => a.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
-  document.querySelectorAll('.tab-btn').forEach(b => {
-    if (b.textContent.toLowerCase().includes(tab === 'history' ? 'history' : tab === 'hobbies' ? 'hobbie' : 'show')) {
+  document.querySelectorAll('.nav-links a[onclick]').forEach(b => {
+    if (b.getAttribute('onclick').includes("'" + tab + "'")) {
       b.classList.add('active');
     }
   });
